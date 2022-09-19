@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cucumber</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<style>
+.cucumber-react .cucumber-status--passed {
+  color: #2CB14A;
+}
+.cucumber-react .cucumber-status--skipped {
+  color: #00A0CC;
+}
+.cucumber-react .cucumber-status--pending {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--undefined {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--ambiguous {
+  color: #F4EBFD;
+}
+.cucumber-react .cucumber-status--failed {
+  color: #BB0000;
+}
+.cucumber-react .cucumber-status--unknown {
+  color: #B6BECB;
+}
+.cucumber-react h1, .cucumber-react h2, .cucumber-react h3 {
+  padding: 0;
+  margin: 0;
+}
+.cucumber-react a {
+  color: inherit;
+}
+.cucumber-react .gherkin-document-list {
+  font: 14px "Open Sans", sans-serif;
+  color: #161C24;
+  background: #fff;
+  overflow-x: hidden;
+}
+.cucumber-react .cucumber-title {
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  display: inline-block;
+}
+.cucumber-react .cucumber-title__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-title__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-tags {
+  padding: 0;
+  margin-bottom: 0;
+}
+.cucumber-react .cucumber-tags .cucumber-tag {
+  display: inline;
+  list-style-type: none;
+  padding: 4px 8px 4px 8px;
+  margin-right: 6px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+}
+.cucumber-react .cucumber-feature__icon {
+  padding-top: 0.35em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-description,
+.cucumber-react .cucumber-children {
+  margin-left: 1em;
+}
+.cucumber-react .cucumber-feature,
+.cucumber-react .cucumber-rule,
+.cucumber-react .cucumber-scenario,
+.cucumber-react .cucumber-background {
+  margin-bottom: 1em;
+}
+.cucumber-react .cucumber-steps {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.cucumber-react .cucumber-steps .cucumber-step {
+  display: flex;
+}
+.cucumber-react .cucumber-steps .cucumber-step__status {
+  padding-top: 0.2em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-steps .cucumber-step__content {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-steps .cucumber-step__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-steps .cucumber-step__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-steps .cucumber-step__param {
+  font-weight: normal;
+  font-style: italic;
+}
+.cucumber-react .cucumber-table {
+  border-collapse: collapse;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cucumber-react .cucumber-table__header-cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell__status {
+  padding: 0.5em 3px 3px 3px;
+}
+.cucumber-react .cucumber-table__cell__step {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-code {
+  padding: 0.25em;
+  background-color: #ebebeb;
+}
+.cucumber-react .cucumber-error {
+  padding: 0.5em;
+  margin: 0;
+  overflow: scroll;
+}
+.cucumber-react .cucumber-no-documents {
+  font: 14px "Open Sans", sans-serif;
+}
+.cucumber-react .cucumber-attachment {
+  background-color: #ebebeb;
+  padding: 0.5em;
+}
+.cucumber-react .cucumber-attachment__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-attachment__image {
+  margin-top: 1em;
+}
+.cucumber-react .cucumber-anchor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 0.3em;
+}
+.cucumber-react .cucumber-anchor__link {
+  opacity: 0;
+  transition: all 0.35s ease-in-out;
+  position: absolute;
+  left: -20px;
+  display: flex;
+  align-items: center;
+}
+.cucumber-react .cucumber-anchor__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-anchor:hover a {
+  opacity: 1;
+  width: max-content;
+  transition: all 0.35s ease-in-out;
+}
+.cucumber-react .cucumber-anchor > * {
+  height: 100%;
+  margin-top: 0px;
+}
+
+.cucumber-report-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font: 11px "Open Sans", sans-serif;
+  margin-bottom: 1em;
+}
+.cucumber-report-header > * {
+  padding: 1em;
+}
+.cucumber-report-header .cucumber-status-filter {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-status-filter table {
+  width: 100%;
+}
+.cucumber-report-header .cucumber-execution-data {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-search-bar {
+  border-right: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search input {
+  padding: 0.4em;
+  border-radius: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search button {
+  height: 2.2em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar p.help {
+  font-size: 80%;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul {
+  display: inline;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li input {
+  display: inline-block;
+  width: auto;
+  height: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li label {
+  padding-right: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-execution-data {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: auto;
+  }
+}
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+    background-color: #f4f4f4;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+.accordion__button:hover {
+    background-color: #ddd;
+}
+
+.accordion__button:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+    transform: rotate(45deg);
+}
+
+.accordion__panel {
+    padding: 20px;
+    animation: fadein 0.35s ease-in;
+}
+
+	</style>
+</head>
+<body>
+<div id="content">
+</div>
+<script>
+window.CUCUMBER_MESSAGES = [{"meta":{"protocolVersion":"13.2.0","implementation":{"name":"cucumber-jvm","version":"6.9.0"},"runtime":{"name":"Java HotSpot(TM) 64-Bit Server VM","version":"11.0.16+11-LTS-199"},"os":{"name":"Windows 11"},"cpu":{"name":"amd64"}}},{"testRunStarted":{"timestamp":{"seconds":"1663336160","nanos":738798500}}},{"source":{"uri":"file:///C:/Users/manis/eclipse-workspace/Etailpet-Automation2/src/test/resources/Bookit-features/Aut-3-Shampooselection.feature","data":"Feature: Bookit form Retailer Dashboard\nScenario: Shampoo Selection in a Bookit form Retailer Dashboard\n\nGiven user is in landing page\nWhen user enters valid username\nAnd user enters valid  password\nAnd clicks on Sign-in button\nThen user select Bookit from dashboard\nThen user click on booking tab\nThen user click on Configuration \nThen user clicks on shampoo selection\nThen verify user can create new shampoo\nThen verify user can create shampoo with existing name\nThen verify user can inactive from shampoo listing page\nThen verify user can active from shampoo listing page\nThen verify user can delete shampoo\nThen verify user can delete a shampoo with appointment\n","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///C:/Users/manis/eclipse-workspace/Etailpet-Automation2/src/test/resources/Bookit-features/Aut-3-Shampooselection.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"Bookit form Retailer Dashboard","children":[{"scenario":{"location":{"line":2,"column":1},"keyword":"Scenario","name":"Shampoo Selection in a Bookit form Retailer Dashboard","steps":[{"location":{"line":4,"column":1},"keyword":"Given ","text":"user is in landing page","id":"f276f9ee-09d8-4b0b-b0a4-7340fb2a9b9c"},{"location":{"line":5,"column":1},"keyword":"When ","text":"user enters valid username","id":"fe6b3a6e-de04-4331-985b-1dedc87c39b7"},{"location":{"line":6,"column":1},"keyword":"And ","text":"user enters valid  password","id":"bbb27a3d-7266-4092-a66d-d88266deeff6"},{"location":{"line":7,"column":1},"keyword":"And ","text":"clicks on Sign-in button","id":"1883788f-3056-4442-9bfe-e9c1a41b0b19"},{"location":{"line":8,"column":1},"keyword":"Then ","text":"user select Bookit from dashboard","id":"ffeaa811-3bf9-4c25-beef-fb3dca607a7f"},{"location":{"line":9,"column":1},"keyword":"Then ","text":"user click on booking tab","id":"20e6d02f-8b55-4274-b600-c01c870b230a"},{"location":{"line":10,"column":1},"keyword":"Then ","text":"user click on Configuration","id":"e730aad2-b139-4ea6-a5f8-1f36039712f0"},{"location":{"line":11,"column":1},"keyword":"Then ","text":"user clicks on shampoo selection","id":"6ba4af4a-179e-417c-b521-90a1fdafd165"},{"location":{"line":12,"column":1},"keyword":"Then ","text":"verify user can create new shampoo","id":"8ca090f3-2ddd-4ddf-a81f-97fdb1882e81"},{"location":{"line":13,"column":1},"keyword":"Then ","text":"verify user can create shampoo with existing name","id":"2a4d2189-55f9-40fa-b774-301294d90a1e"},{"location":{"line":14,"column":1},"keyword":"Then ","text":"verify user can inactive from shampoo listing page","id":"e0ca27a6-b80f-41b4-b3b8-0f9199349b6b"},{"location":{"line":15,"column":1},"keyword":"Then ","text":"verify user can active from shampoo listing page","id":"1ca77c81-f885-43d1-b66e-56609e14f3a1"},{"location":{"line":16,"column":1},"keyword":"Then ","text":"verify user can delete shampoo","id":"115b5216-20f6-43cd-bb15-e1b63d9ccb30"},{"location":{"line":17,"column":1},"keyword":"Then ","text":"verify user can delete a shampoo with appointment","id":"95923035-dbdd-4cf5-9077-4130134c222d"}],"id":"0be3616c-5001-460e-9bd4-53fa6fe0a820"}}]}}},{"pickle":{"id":"5e36b1c8-2ef2-4f87-878c-075cc3d557cf","uri":"file:///C:/Users/manis/eclipse-workspace/Etailpet-Automation2/src/test/resources/Bookit-features/Aut-3-Shampooselection.feature","name":"Shampoo Selection in a Bookit form Retailer Dashboard","language":"en","steps":[{"text":"user is in landing page","id":"a4b2e587-278c-4893-ab35-b7ac29bd7856","astNodeIds":["f276f9ee-09d8-4b0b-b0a4-7340fb2a9b9c"]},{"text":"user enters valid username","id":"5ca6bd23-7329-46a5-9145-c2001e84d74a","astNodeIds":["fe6b3a6e-de04-4331-985b-1dedc87c39b7"]},{"text":"user enters valid  password","id":"96e8bdf3-d0bb-4036-98a7-4e139c38e9ff","astNodeIds":["bbb27a3d-7266-4092-a66d-d88266deeff6"]},{"text":"clicks on Sign-in button","id":"52ba0e1a-8426-4ab8-8e04-6454ad145384","astNodeIds":["1883788f-3056-4442-9bfe-e9c1a41b0b19"]},{"text":"user select Bookit from dashboard","id":"45106384-f000-43b1-b60e-250e01506f2e","astNodeIds":["ffeaa811-3bf9-4c25-beef-fb3dca607a7f"]},{"text":"user click on booking tab","id":"07908e3a-a112-4068-810e-b64b4403cab2","astNodeIds":["20e6d02f-8b55-4274-b600-c01c870b230a"]},{"text":"user click on Configuration","id":"b9ef3a81-c356-483d-a9fe-17599a668a33","astNodeIds":["e730aad2-b139-4ea6-a5f8-1f36039712f0"]},{"text":"user clicks on shampoo selection","id":"8e45d9cc-6bae-4702-bed0-c8f0f29ad157","astNodeIds":["6ba4af4a-179e-417c-b521-90a1fdafd165"]},{"text":"verify user can create new shampoo","id":"d1282f97-0e9b-4d74-9170-2fabe22b6380","astNodeIds":["8ca090f3-2ddd-4ddf-a81f-97fdb1882e81"]},{"text":"verify user can create shampoo with existing name","id":"68bab673-79c1-44e7-8905-ba75b26bce4d","astNodeIds":["2a4d2189-55f9-40fa-b774-301294d90a1e"]},{"text":"verify user can inactive from shampoo listing page","id":"845cd976-54fe-402b-9cc6-9ae07483bff2","astNodeIds":["e0ca27a6-b80f-41b4-b3b8-0f9199349b6b"]},{"text":"verify user can active from shampoo listing page","id":"c52e4912-77e8-49a2-8287-da0d45bfa5f6","astNodeIds":["1ca77c81-f885-43d1-b66e-56609e14f3a1"]},{"text":"verify user can delete shampoo","id":"46add32d-8435-4de9-8bc0-8960c7945dd0","astNodeIds":["115b5216-20f6-43cd-bb15-e1b63d9ccb30"]},{"text":"verify user can delete a shampoo with appointment","id":"b84614cc-d6c4-42f1-832c-a1ef758ec037","astNodeIds":["95923035-dbdd-4cf5-9077-4130134c222d"]}],"astNodeIds":["0be3616c-5001-460e-9bd4-53fa6fe0a820"]}},{"source":{"uri":"file:///C:/Users/manis/eclipse-workspace/Etailpet-Automation2/src/test/resources/Bookit-features/Aut-47-Add-on-service.feature","data":"Feature: Etailpet Web features\n\nScenario: Add-on-service\nGiven user is in landing page\nWhen user enters valid username\nAnd user enters valid  password\nAnd clicks on Sign-in button\nThen user select Bookit from dashboard\nThen user click on booking tab\nThen user click on Configuration \nThen user click on add-on-service\nThen Verify whether retailer is able to create  Add-on-service \nThen Verify whether retailer is able to create Add-on-service  with Existing name \nThen Verify whether user is able to delete the Add-on-service\nThen Verify whether user is able to delete the Add-on-service with  appointment \nThen Verify whether Add-on-service is able to active from the Add-on-service listing page\nThen Verify whether Add-on-service is able to inactive from the Add-on-service listing page\n\n\n#Scenario: Add-on-service\n#Given user is in landing page\n#When user enters valid username\n#And user enters vaid  password\n#And clicks on Sign-in button\n#Then user select Bookit from dashboard\n#Then user click on booking tab\n#Then user click on Configuration \n#Then user click on add-on-service\n#Then Verify whether user is able to delete the Add-on-service with  appointment \n#\n#\n#Scenario: Add-on-service\n#Given user is in landing page\n#When user enters valid username\n#And user enters vaid  password\n#And clicks on Sign-in button\n#Then user select Bookit from dashboard\n#Then user click on booking tab\n#Then user click on Configuration \n#Then user click on add-on-service\n#Then Verify whether retailer is able to create  Add-on-service \n#\n#\n#Scenario: Add-on-service\n#Given user is in landing page\n#When user enters valid username\n#And user enters vaid  password\n#And clicks on Sign-in button\n#Then user select Bookit from dashboard\n#Then user click on booking tab\n#Then user click on Configuration \n#Then user click on add-on-service\n#Then Verify whether retailer is able to create Add-on-service  with Existing name \n#\n#\n#Scenario: Add-on-service\n#Given user is in landing page\n#When user enters valid username\n#And user enters vaid  password\n#And clicks on Sign-in button\n#Then user select Bookit from dashboard\n#Then user click on booking tab\n#Then user click on Configuration \n#Then user click on add-on-service\n#Then Verify whether Add-on-service is able to active from the Add-on-service listing page\n#\n#\n#Scenario: Add-on-service\n#Given user is in landing page\n#When user enters valid username\n#And user enters vaid  password\n#And clicks on Sign-in button\n#Then user select Bookit from dashboard\n#Then user click on booking tab\n#Then user click on Configuration \n#Then user click on add-on-service\n#Then Verify whether Add-on-service is able to inactive from the Add-on-service listing page\n#\n#\n#\n","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///C:/Users/manis/eclipse-workspace/Etailpet-Automation2/src/test/resources/Bookit-features/Aut-47-Add-on-service.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"Etailpet Web features","children":[{"scenario":{"location":{"line":3,"column":1},"keyword":"Scenario","name":"Add-on-service","steps":[{"location":{"line":4,"column":1},"keyword":"Given ","text":"user is in landing page","id":"52642b37-27af-4817-bdba-320ea3f03909"},{"location":{"line":5,"column":1},"keyword":"When ","text":"user enters valid username","id":"6e9109fd-df42-4c81-b5fd-517d2c7ca0e3"},{"location":{"line":6,"column":1},"keyword":"And ","text":"user enters valid  password","id":"1e629bbb-9e52-4869-9b7a-44a57a0693b5"},{"location":{"line":7,"column":1},"keyword":"And ","text":"clicks on Sign-in button","id":"e2114620-75a9-47ba-bded-8fd4164dea5e"},{"location":{"line":8,"column":1},"keyword":"Then ","text":"user select Bookit from dashboard","id":"d3395aa8-7bc5-4cc4-944b-db55b4c4bc67"},{"location":{"line":9,"column":1},"keyword":"Then ","text":"user click on booking tab","id":"76f56696-79fc-42fb-9da5-bd7e94299b8f"},{"location":{"line":10,"column":1},"keyword":"Then ","text":"user click on Configuration","id":"039f1171-f716-4302-83db-2b039e7c6c14"},{"location":{"line":11,"column":1},"keyword":"Then ","text":"user click on add-on-service","id":"f454b742-366b-48b5-b17a-5c825ed4e1dc"},{"location":{"line":12,"column":1},"keyword":"Then ","text":"Verify whether retailer is able to create  Add-on-service","id":"7dc19bd9-dcad-4662-839e-f1da5379d494"},{"location":{"line":13,"column":1},"keyword":"Then ","text":"Verify whether retailer is able to create Add-on-service  with Existing name","id":"249fb0cd-56fd-4d44-a6b6-f71e91ae2a13"},{"location":{"line":14,"column":1},"keyword":"Then ","text":"Verify whether user is able to delete the Add-on-service","id":"657b62f0-9ea7-49d4-93c5-83165a1f2456"},{"location":{"line":15,"column":1},"keyword":"Then ","text":"Verify whether user is able to delete the Add-on-service with  appointment","id":"e051387e-4dc6-44c4-a9c0-e7f863d61ecb"},{"location":{"line":16,"column":1},"keyword":"Then ","text":"Verify whether Add-on-service is able to active from the Add-on-service listing page","id":"805c328e-ae86-42aa-937d-d4c54a932198"},{"location":{"line":17,"column":1},"keyword":"Then ","text":"Verify whether Add-on-service is able to inactive from the Add-on-service listing page","id":"d5731e0e-5541-4778-b46a-f8a11fd97bc8"}],"id":"a88e09f0-70df-4ef7-9490-c78b25558c3e"}}]},"comments":[{"location":{"line":20,"column":1},"text":"#Scenario: Add-on-service"},{"location":{"line":21,"column":1},"text":"#Given user is in landing page"},{"location":{"line":22,"column":1},"text":"#When user enters valid username"},{"location":{"line":23,"column":1},"text":"#And user enters vaid  password"},{"location":{"line":24,"column":1},"text":"#And clicks on Sign-in button"},{"location":{"line":25,"column":1},"text":"#Then user select Bookit from dashboard"},{"location":{"line":26,"column":1},"text":"#Then user click on booking tab"},{"location":{"line":27,"column":1},"text":"#Then user click on Configuration "},{"location":{"line":28,"column":1},"text":"#Then user click on add-on-service"},{"location":{"line":29,"column":1},"text":"#Then Verify whether user is able to delete the Add-on-service with  appointment "},{"location":{"line":30,"column":1},"text":"#"},{"location":{"line":31,"column":1},"text":"#"},{"location":{"line":32,"column":1},"text":"#Scenario: Add-on-service"},{"location":{"line":33,"column":1},"text":"#Given user is in landing page"},{"location":{"line":34,"column":1},"text":"#When user enters valid username"},{"location":{"line":35,"column":1},"text":"#And user enters vaid  password"},{"location":{"line":36,"column":1},"text":"#And clicks on Sign-in button"},{"location":{"line":37,"column":1},"text":"#Then user select Bookit from dashboard"},{"location":{"line":38,"column":1},"text":"#Then user click on booking tab"},{"location":{"line":39,"column":1},"text":"#Then user click on Configuration "},{"location":{"line":40,"column":1},"text":"#Then user click on add-on-service"},{"location":{"line":41,"column":1},"text":"#Then Verify whether retailer is able to create  Add-on-service "},{"location":{"line":42,"column":1},"text":"#"},{"location":{"line":43,"column":1},"text":"#"},{"location":{"line":44,"column":1},"text":"#Scenario: Add-on-service"},{"location":{"line":45,"column":1},"text":"#Given user is in landing page"},{"location":{"line":46,"column":1},"text":"#When user enters valid username"},{"location":{"line":47,"column":1},"text":"#And user enters vaid  password"},{"location":{"line":48,"column":1},"text":"#And clicks on Sign-in button"},{"location":{"line":49,"column":1},"text":"#Then user select Bookit from dashboard"},{"location":{"line":50,"column":1},"text":"#Then user click on booking tab"},{"location":{"line":51,"column":1},"text":"#Then user click on Configuration "},{"location":{"line":52,"column":1},"text":"#Then user click on add-on-service"},{"location":{"line":53,"column":1},"text":"#Then Verify whether retailer is able to create Add-on-service  with Existing name "},{"location":{"line":54,"column":1},"text":"#"},{"location":{"line":55,"column":1},"text":"#"},{"location":{"line":56,"column":1},"text":"#Scenario: Add-on-service"},{"location":{"line":57,"column":1},"text":"#Given user is in landing page"},{"location":{"line":58,"column":1},"text":"#When user enters valid username"},{"location":{"line":59,"column":1},"text":"#And user enters vaid  password"},{"location":{"line":60,"column":1},"text":"#And clicks on Sign-in button"},{"location":{"line":61,"column":1},"text":"#Then user select Bookit from dashboard"},{"location":{"line":62,"column":1},"text":"#Then user click on booking tab"},{"location":{"line":63,"column":1},"text":"#Then user click on Configuration "},{"location":{"line":64,"column":1},"text":"#Then user click on add-on-service"},{"location":{"line":65,"column":1},"text":"#Then Verify whether Add-on-service is able to active from the Add-on-service listing page"},{"location":{"line":66,"column":1},"text":"#"},{"location":{"line":67,"column":1},"text":"#"},{"location":{"line":68,"column":1},"text":"#Scenario: Add-on-service"},{"location":{"line":69,"column":1},"text":"#Given user is in landing page"},{"location":{"line":70,"column":1},"text":"#When user enters valid username"},{"location":{"line":71,"column":1},"text":"#And user enters vaid  password"},{"location":{"line":72,"column":1},"text":"#And clicks on Sign-in button"},{"location":{"line":73,"column":1},"text":"#Then user select Bookit from dashboard"},{"location":{"line":74,"column":1},"text":"#Then user click on booking tab"},{"location":{"line":75,"column":1},"text":"#Then user click on Configuration "},{"location":{"line":76,"column":1},"text":"#Then user click on add-on-service"},{"location":{"line":77,"column":1},"text":"#Then Verify whether Add-on-service is able to inactive from the Add-on-service listing page"},{"location":{"line":78,"column":1},"text":"#"},{"location":{"line":79,"column":1},"text":"#"},{"location":{"line":80,"column":1},"text":"#"}]}},{"pickle":{"id":"cbf5885b-302d-408d-a8b1-4a76b295f9da","uri":"file:///C:/Users/manis/eclipse-workspace/Etailpet-Automation2/src/test/resources/Bookit-features/Aut-47-Add-on-service.feature","name":"Add-on-service","language":"en","steps":[{"text":"user is in landing page","id":"9113f92a-305b-4425-8af6-40f7fc4357e1","astNodeIds":["52642b37-27af-4817-bdba-320ea3f03909"]},{"text":"user enters valid username","id":"f93f3916-8d65-40ae-9ff8-188ef3cd38c6","astNodeIds":["6e9109fd-df42-4c81-b5fd-517d2c7ca0e3"]},{"text":"user enters valid  password","id":"f8a66910-2b75-4664-80a8-42576696d51f","astNodeIds":["1e629bbb-9e52-4869-9b7a-44a57a0693b5"]},{"text":"clicks on Sign-in button","id":"84f3c15f-9360-45c2-8ad5-4038384df0fb","astNodeIds":["e2114620-75a9-47ba-bded-8fd4164dea5e"]},{"text":"user select Bookit from dashboard","id":"37c4be60-f774-45f5-8a31-a44cac2dd273","astNodeIds":["d3395aa8-7bc5-4cc4-944b-db55b4c4bc67"]},{"text":"user click on booking tab","id":"ba7a3c8b-a146-4430-87c7-c348ad5ca957","astNodeIds":["76f56696-79fc-42fb-9da5-bd7e94299b8f"]},{"text":"user click on Configuration","id":"e1a2e7c4-4b47-4a93-8c65-3fa85ec4e9a4","astNodeIds":["039f1171-f716-4302-83db-2b039e7c6c14"]},{"text":"user click on add-on-service","id":"4fa9e053-90dc-402b-b41e-914d3cd54ab2","astNodeIds":["f454b742-366b-48b5-b17a-5c825ed4e1dc"]},{"text":"Verify whether retailer is able to create  Add-on-service","id":"476ae111-a8fa-4fb5-923a-51d967697264","astNodeIds":["7dc19bd9-dcad-4662-839e-f1da5379d494"]},{"text":"Verify whether retailer is able to create Add-on-service  with Existing name","id":"24ad5938-457a-48cf-8684-158104dcec7b","astNodeIds":["249fb0cd-56fd-4d44-a6b6-f71e91ae2a13"]},{"text":"Verify whether user is able to delete the Add-on-service","id":"83f01b88-d9a4-4053-a12a-73d1c34569c5","astNodeIds":["657b62f0-9ea7-49d4-93c5-83165a1f2456"]},{"text":"Verify whether user is able to delete the Add-on-service with  appointment","id":"a05434de-ac31-447d-bd8b-e7a783470c05","astNodeIds":["e051387e-4dc6-44c4-a9c0-e7f863d61ecb"]},{"text":"Verify whether Add-on-service is able to active from the Add-on-service listing page","id":"0304ad6d-3fc2-48ee-ac87-2a0423312e05","astNodeIds":["805c328e-ae86-42aa-937d-d4c54a932198"]},{"text":"Verify whether Add-on-service is able to inactive from the Add-on-service listing page","id":"12898e30-72a7-4aec-b617-b265a0fc6140","astNodeIds":["d5731e0e-5541-4778-b46a-f8a11fd97bc8"]}],"astNodeIds":["a88e09f0-70df-4ef7-9490-c78b25558c3e"]}},{"source":{"uri":"file:///C:/Users/manis/eclipse-workspace/Etailpet-Automation2/src/test/resources/Bookit-features/Aut-49-BKI-Booking.feature","data":"Feature: Etailpet Web features\n\nScenario:  BKI- Login as a Retailer \nGiven user is in landing page\nWhen user enters valid username\nAnd user enters vaid  password\nAnd clicks on Sign-in button\nThen user select Bookit from dashboard\nThen user click on booking tab\nThen user click on Schedule tab \nThen user click on new Appointment tab\nThen User Select Customer\nThen User Select pet type\nThen User Select service type\nThen User select service name\n#Then User select Attendant \nThen User Select TimeSlot","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///C:/Users/manis/eclipse-workspace/Etailpet-Automation2/src/test/resources/Bookit-features/Aut-49-BKI-Booking.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"Etailpet Web features","children":[{"scenario":{"location":{"line":3,"column":1},"keyword":"Scenario","name":"BKI- Login as a Retailer","steps":[{"location":{"line":4,"column":1},"keyword":"Given ","text":"user is in landing page","id":"e763fc1b-7973-45f8-b926-89102d10e33b"},{"location":{"line":5,"column":1},"keyword":"When ","text":"user enters valid username","id":"c17613d8-e4b5-4f04-90a3-13af8a546272"},{"location":{"line":6,"column":1},"keyword":"And ","text":"user enters vaid  password","id":"0a5aecdc-7a1a-4292-acea-fa540be840a9"},{"location":{"line":7,"column":1},"keyword":"And ","text":"clicks on Sign-in button","id":"190292b7-0b6e-427a-9c3a-6254bc1ea799"},{"location":{"line":8,"column":1},"keyword":"Then ","text":"user select Bookit from dashboard","id":"b8559729-f299-422b-99ea-90fe00fb3144"},{"location":{"line":9,"column":1},"keyword":"Then ","text":"user click on booking tab","id":"0e196752-379e-4e6a-b258-62889fdeb395"},{"location":{"line":10,"column":1},"keyword":"Then ","text":"user click on Schedule tab","id":"63a9e658-d90b-4d0d-a53b-ca5fd056d2bb"},{"location":{"line":11,"column":1},"keyword":"Then ","text":"user click on new Appointment tab","id":"c9857803-ec60-4a03-bac4-c6607428742e"},{"location":{"line":12,"column":1},"keyword":"Then ","text":"User Select Customer","id":"180d281a-646c-4503-9ba8-ad736f146853"},{"location":{"line":13,"column":1},"keyword":"Then ","text":"User Select pet type","id":"927bd5e4-dfde-4fff-8fec-614cb89e4519"},{"location":{"line":14,"column":1},"keyword":"Then ","text":"User Select service type","id":"04417d6c-157e-4326-99f3-c590d5cdf62f"},{"location":{"line":15,"column":1},"keyword":"Then ","text":"User select service name","id":"f838f65c-8c0e-4083-8d37-8966bea229e0"},{"location":{"line":17,"column":1},"keyword":"Then ","text":"User Select TimeSlot","id":"a5abfb62-34ba-4590-bfc5-052fdc5a2c0a"}],"id":"2630aade-b42d-4cbb-9108-16aa63688204"}}]},"comments":[{"location":{"line":16,"column":1},"text":"#Then User select Attendant "}]}},{"pickle":{"id":"312fa431-9c36-45eb-802f-eb6b6eaa94a6","uri":"file:///C:/Users/manis/eclipse-workspace/Etailpet-Automation2/src/test/resources/Bookit-features/Aut-49-BKI-Booking.feature","name":"BKI- Login as a Retailer","language":"en","steps":[{"text":"user is in landing page","id":"90505e27-92e1-4527-90a6-b7995a6f87ba","astNodeIds":["e763fc1b-7973-45f8-b926-89102d10e33b"]},{"text":"user enters valid username","id":"e0d428d1-26d5-43be-a626-5b2e1c3f8226","astNodeIds":["c17613d8-e4b5-4f04-90a3-13af8a546272"]},{"text":"user enters vaid  password","id":"5f15dc36-3056-4679-a32a-90f2957f01f4","astNodeIds":["0a5aecdc-7a1a-4292-acea-fa540be840a9"]},{"text":"clicks on Sign-in button","id":"16036f93-40d2-46e6-9930-5b42af0e01b3","astNodeIds":["190292b7-0b6e-427a-9c3a-6254bc1ea799"]},{"text":"user select Bookit from dashboard","id":"f537b0be-2623-43e6-af4a-4eb337ab134d","astNodeIds":["b8559729-f299-422b-99ea-90fe00fb3144"]},{"text":"user click on booking tab","id":"23b2ad78-3e78-4671-a84f-d6a4b6c732f7","astNodeIds":["0e196752-379e-4e6a-b258-62889fdeb395"]},{"text":"user click on Schedule tab","id":"77c848a7-eaa4-4314-9355-1e946161a233","astNodeIds":["63a9e658-d90b-4d0d-a53b-ca5fd056d2bb"]},{"text":"user click on new Appointment tab","id":"bf2fee78-d52f-47d6-9bc2-21408ca76f3b","astNodeIds":["c9857803-ec60-4a03-bac4-c6607428742e"]},{"text":"User Select Customer","id":"625d853c-3fab-4302-b33f-66232bedbe1e","astNodeIds":["180d281a-646c-4503-9ba8-ad736f146853"]},{"text":"User Select pet type","id":"e7f1860b-7001-4ac9-981d-f1cac9c4917e","astNodeIds":["927bd5e4-dfde-4fff-8fec-614cb89e4519"]},{"text":"User Select service type","id":"3c2585dc-bf5a-4f37-9907-3b23b36133e4","astNodeIds":["04417d6c-157e-4326-99f3-c590d5cdf62f"]},{"text":"User select service name","id":"0d8882cd-59a2-4801-b55e-3cd6b5a633ea","astNodeIds":["f838f65c-8c0e-4083-8d37-8966bea229e0"]},{"text":"User Select TimeSlot","id":"965390b0-a3de-4169-99c8-174b0363da83","astNodeIds":["a5abfb62-34ba-4590-bfc5-052fdc5a2c0a"]}],"astNodeIds":["2630aade-b42d-4cbb-9108-16aa63688204"]}},{"source":{"uri":"file:///C:/Users/manis/eclipse-workspace/Etailpet-Automation2/src/test/resources/Bookit-features/Aut-53-BKI-%20Login-Retailer.feature","data":"Feature: Etailpet Web features\n@Smoke\nScenario:  BKI- Login as a Retailer \nGiven user is in landing page\nWhen user enters valid username\nAnd user enters valid  password\nAnd clicks on Sign-in button\nThen user select Bookit from dashboard","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///C:/Users/manis/eclipse-workspace/Etailpet-Automation2/src/test/resources/Bookit-features/Aut-53-BKI-%20Login-Retailer.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"Etailpet Web features","children":[{"scenario":{"location":{"line":3,"column":1},"tags":[{"location":{"line":2,"column":1},"name":"@Smoke","id":"136d45ed-855c-4f48-b111-214abcc5bab3"}],"keyword":"Scenario","name":"BKI- Login as a Retailer","steps":[{"location":{"line":4,"column":1},"keyword":"Given ","text":"user is in landing page","id":"db42b24a-b76b-4f4d-bedd-a62ebedef054"},{"location":{"line":5,"column":1},"keyword":"When ","text":"user enters valid username","id":"bf57fb7b-a878-407d-9f07-4b83cf31477a"},{"location":{"line":6,"column":1},"keyword":"And ","text":"user enters valid  password","id":"63502191-d728-4e8b-adfe-e7f3afa91e50"},{"location":{"line":7,"column":1},"keyword":"And ","text":"clicks on Sign-in button","id":"327e96d7-732e-4b29-ab01-e64192ccc174"},{"location":{"line":8,"column":1},"keyword":"Then ","text":"user select Bookit from dashboard","id":"5abd951e-4f34-4a6f-8a48-2a8139b8d124"}],"id":"23e6d383-9315-4f44-a057-ba5feca97d35"}}]}}},{"pickle":{"id":"27f46a82-a1ed-4525-ac37-499c2d1c3c43","uri":"file:///C:/Users/manis/eclipse-workspace/Etailpet-Automation2/src/test/resources/Bookit-features/Aut-53-BKI-%20Login-Retailer.feature","name":"BKI- Login as a Retailer","language":"en","steps":[{"text":"user is in landing page","id":"2ad28866-58ae-48ac-8267-b15c0d089765","astNodeIds":["db42b24a-b76b-4f4d-be
