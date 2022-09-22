@@ -141,8 +141,6 @@
 					<includes>
 						<include>**/ParallelRun.java</include>
 						<include>**/BookitTestRunner.java</include>
-					    <include>**/EcomTestRunner.java</include>
-						<include>**/PosTestRunner.java</include>
 					</includes>
 					<parallel>methods</parallel>
 					<threadCount>4</threadCount>
